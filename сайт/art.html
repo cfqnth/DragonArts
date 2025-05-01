@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Открытие изображения с описанием</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .photo-container {
+            margin: 10px;
+            text-align: center;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer; /* Указатель при наведении */
+            top: 200px;
+        }
+        .photo {
+            width: 200px;
+            height: 150px;
+            transition: transform 0.3s ease;
+            top: 200px;
+        }
+        .photo:hover {
+            transform: scale(1.1);
+        }
+        /* Стиль для модального окна */
+        .modal {
+            display: none; /* Скрыто по умолчанию */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Поверх остальных элементов */
+        }
+        .modal-content {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            max-width: 90%;
+            max-height: 90%;
+            overflow: auto;
+        }
+        .modal-content img {
+            max-width: 100%;
+            max-height: 70vh; /* Ограничение высоты изображения */
+        }
+        .close {
+            cursor: pointer;
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+       
+
+    </style>
+</head>
+<body>
+
+
+    <div class="photo-container" onclick="openModal('фото1.jpg', 'Описание для фото 1')">
+        <img class="photo" src="фото1.jpg" alt="Фото 1">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото2.jpg', 'Описание для фото 2')">
+        <img class="photo" src="фото2.jpg" alt="Фото 2">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото3.jpg', 'Описание для фото 3')">
+        <img class="photo" src="фото3.jpg" alt="Фото 3">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото4.jpg', 'Описание для фото 4')">
+        <img class="photo" src="фото4.jpg" alt="Фото 4">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото5.jpg', 'Описание для фото 5')">
+        <img class="photo" src="фото5.jpg" alt="Фото 5">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото6.jpg', 'Описание для фото 6')">
+        <img class="photo" src="фото6.jpg" alt="Фото 6">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото7.jpg', 'Описание для фото 7')">
+        <img class="photo" src="фото7.jpg" alt="Фото 7">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото8.jpg', 'Описание для фото 8')">
+        <img class="photo" src="фото8.jpg" alt="Фото 8">
+    </div>
+
+    <div class="modal" id="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Полноэкранное изображение">
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+
+    <script>
+        function openModal(imageSrc, description) {
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modalImage');
+            const modalDescription = document.getElementById('modalDescription');
+            modalImage.src = imageSrc; // Устанавливаем источник изображения
+            modalDescription.textContent = description; // Устанавливаем описание
+            modal.style.display = 'flex'; // Показываем модальное окно
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none'; // Скрываем модальное окно
+        }
+    </script>
+
+</body>
+</html>

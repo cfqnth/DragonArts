@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Открытие изображения с описанием</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .photo-container {
+            margin: 10px;
+            text-align: center;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer; /* Указатель при наведении */
+            top: 200px;
+        }
+        .photo {
+            width: 200px;
+            height: 150px;
+            transition: transform 0.3s ease;
+            top: 200px;
+        }
+        .photo:hover {
+            transform: scale(1.1);
+        }
+        /* Стиль для модального окна */
+        .modal {
+            display: none; /* Скрыто по умолчанию */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Поверх остальных элементов */
+        }
+        .modal-content {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            max-width: 90%;
+            max-height: 90%;
+            overflow: auto;
+        }
+        .modal-content img {
+            max-width: 100%;
+            max-height: 70vh; /* Ограничение высоты изображения */
+        }
+        .close {
+            cursor: pointer;
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+       
+
+    </style>
+</head>
+<body>
+
+
+    <div class="photo-container" onclick="openModal('фото9.jpg', 'Описание для фото 9')">
+        <img class="photo" src="фото9.jpg" alt="Фото 9">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото10.jpg', 'Описание для фото 10')">
+        <img class="photo" src="фото10.jpg" alt="Фото 10">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото11.jpg', 'Описание для фото 11')">
+        <img class="photo" src="фото11.jpg" alt="Фото 11">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото12.jpg', 'Описание для фото 12')">
+        <img class="photo" src="фото12.jpg" alt="Фото 12">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото13.jpg', 'Описание для фото 13')">
+        <img class="photo" src="фото13.jpg" alt="Фото 13">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото14.jpg', 'Описание для фото 14')">
+        <img class="photo" src="фото14.jpg" alt="Фото 14">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото15.jpg', 'Описание для фото 15')">
+        <img class="photo" src="фото15.jpg" alt="Фото 15">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото16.jpg', 'Описание для фото 16')">
+        <img class="photo" src="фото16.jpg" alt="Фото 16">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото17.jpg', 'Описание для фото 17')">
+        <img class="photo" src="фото17.jpg" alt="Фото 17">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото18.jpg', 'Описание для фото 18')">
+        <img class="photo" src="фото18.jpg" alt="Фото 18">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото19.jpg', 'Описание для фото 19')">
+        <img class="photo" src="фото19.jpg" alt="Фото 19">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото20.jpg', 'Описание для фото 20')">
+        <img class="photo" src="фото20.jpg" alt="Фото 20">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото21.jpg', 'Описание для фото 21')">
+        <img class="photo" src="фото21.jpg" alt="Фото 21">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото22.jpg', 'Описание для фото 22')">
+        <img class="photo" src="фото22.jpg" alt="Фото 22">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото23.jpg', 'Описание для фото 23')">
+        <img class="photo" src="фото23.jpg" alt="Фото 23">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото24.jpg', 'Описание для фото 24')">
+        <img class="photo" src="фото24.jpg" alt="Фото 24">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото25.jpg', 'Описание для фото 25')">
+        <img class="photo" src="фото25.jpg" alt="Фото 25">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото26.jpg', 'Описание для фото 26')">
+        <img class="photo" src="фото26.jpg" alt="Фото 26">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото27.jpg', 'Описание для фото 27')">
+        <img class="photo" src="фото27.jpg" alt="Фото 27">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото28.jpg', 'Описание для фото 28')">
+        <img class="photo" src="фото28.jpg" alt="Фото 28">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото29.jpg', 'Описание для фото 29')">
+        <img class="photo" src="фото29.jpg" alt="Фото 29">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото30.jpg', 'Описание для фото 30')">
+        <img class="photo" src="фото30.jpg" alt="Фото 30">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото31.jpg', 'Описание для фото 31')">
+        <img class="photo" src="фото31.jpg" alt="Фото 31">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото32.jpg', 'Описание для фото 32')">
+        <img class="photo" src="фото32.jpg" alt="Фото 32">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото33.jpg', 'Описание для фото 33')">
+        <img class="photo" src="фото33.jpg" alt="Фото 33">
+    </div>
+
+    <div class="photo-container" onclick="openModal('фото34.jpg', 'Описание для фото 34')">
+        <img class="photo" src="фото34.jpg" alt="Фото 34">
+    </div>
+
+    <div class="modal" id="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Полноэкранное изображение">
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+
+    <script>
+        function openModal(imageSrc, description) {
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modalImage');
+            const modalDescription = document.getElementById('modalDescription');
+            modalImage.src = imageSrc; // Устанавливаем источник изображения
+            modalDescription.textContent = description; // Устанавливаем описание
+            modal.style.display = 'flex'; // Показываем модальное окно
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none'; // Скрываем модальное окно
+        }
+    </script>
